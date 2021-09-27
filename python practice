@@ -1,0 +1,22 @@
+import pandas as pd
+titanic = pd.read_csv('https://vincentarelbundock.github.io/' +
+                     'Rdatasets/csv/carData/TitanicSurvival.csv')
+
+pd.set_option('precision', 2)
+
+print(titanic.head())
+print('')
+print(titanic.tail())
+print('')
+
+titanic.columns = ['name', 'survived', 'sex', 'age', 'class']
+print(titanic.head())
+print('')
+
+print(titanic.describe())
+print('')
+
+print((titanic.survived == 'yes').describe())
+
+%matplotlib
+histogram = titanic.hist()
